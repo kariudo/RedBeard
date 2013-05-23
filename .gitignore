@@ -6,7 +6,9 @@
 
 README.rdoc
 .idea/
-
+.idea/*
+/.idea
+.idea
 
 # Ignore bundler config
 /.bundle
