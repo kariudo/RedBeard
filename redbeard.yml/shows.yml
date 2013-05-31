@@ -1,9 +1,0 @@
----
-- id: 1
-  tvdb_id: 83277
-  title: Toradora!
-  started: !ruby/object:DateTime 2008-10-01 00:00:00.000000000 -04:00
-  added: !ruby/object:DateTime 2013-05-29 19:13:43.103146000 -04:00
-  updated: !ruby/object:DateTime 2013-05-29 19:13:43.103146000 -04:00
-  episodes: 
-  episodes_have: 
