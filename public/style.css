@@ -1,0 +1,143 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
+body {
+    margin: 35px auto;
+    width: 640px;
+}
+
+header {
+    text-align: center;
+    margin: 0 0 20px;
+    height: 128px;
+    background: url('icon.png') no-repeat top right;
+}
+
+header h1 {
+    display: inline;
+    font-size: 32px;
+}
+
+header h1 a:link, header h1 a:visited {
+    color: #444;
+    text-decoration: none;
+}
+
+header h2 {
+    font-size: 16px;
+    font-style: italic;
+    color: #b04739;
+}
+
+#main {
+    margin: 0 0 20px;
+}
+
+#add {
+    margin: 0 0 20px;
+}
+
+#add textarea {
+    height: 30px;
+    width: 510px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#add input {
+    height: 50px;
+    width: 114px;
+    margin: -13px 0 0 12px;
+    border: 1px solid #ddd;
+    background: powderblue;
+    vertical-align: middle;
+}
+
+#edit textarea {
+    height: 30px;
+    width: 480px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#edit input[type=submit] {
+    height: 50px;
+    width: 100px;
+    margin: -50px 0 0;
+    border: 1px solid #ddd;
+    background: lightgreen;
+}
+
+#edit input[type=checkbox] {
+    height: 50px;
+    width: 20px;
+}
+
+article {
+    border: 1px solid #4fe;
+    border-top: none;
+    padding: 0px;
+}
+
+article:first-of-type {
+    border: 1px solid #4fe;
+}
+
+article:nth-child(even) {
+    background: #fafafa;
+}
+
+article.complete {
+    background: #fedae3;
+}
+
+article span {
+    font-size: 0.8em;
+}
+
+p {
+    margin: 0 0 5px;
+}
+
+.inner_article {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 0px;
+    width:100%;
+    height: 100%;
+    padding: 10px 15px;
+}
+
+.detail {
+    width: 100%;
+}
+
+.meta {
+    font-size: 0.8em;
+    font-style: italic;
+    color: #888;
+}
+
+.links {
+    font-size: 1.8em;
+    line-height: 0.8em;
+    float: right;
+    margin: -10px 0 0;
+}
+
+.links a {
+    display: block;
+    text-decoration: none;
+}
+
+.show_title {
+    text-shadow: 0px 0px 3px #4fe;
+    font-weight: bold;
+    font-size: 2.5em
+}

@@ -1,0 +1,47 @@
+<%
+if @show
+   @title = @show.title
+   tvdb = Tvdbr::Client.new('0BEE2B133E44344D')
+   series = tvdb.find_series_by_id(@show.tvdb_id)
+   if series.banner
+       File.open("public/img/banner/#{@show.tvdb_id}.jpg", 'wb') do |fo|
+        fo.write open(series.banner).read
+       end unless File.exist?("public/img/banner/#{@show.tvdb_id}.jpg")
+   end
+%>
+    <article>
+      <p>
+        <%= @show.title %> - <%= @show.tvdb_id %>
+        <span><a href="/<%= "#{@show.id}/edit" %>">[edit]</a></span><a href="http://thetvdb.com/?tab=series&id=<%= show.tvdb_id %>">&nbsp;<span class="entypo-database"></span></a>
+      </p>
+      <p class="links">
+        <a href="/<%= @show.id %>/delete">&#9762;</a>
+      </p>
+      <p class="meta">Added: <%= @show.added %></p>
+      <p class="meta">Updated: <%= @show.updated %></p>
+      <% if series.banner %>
+      <img src="<%= "/img/banner/#{@show.tvdb_id}.jpg" %>">
+      <% end %>
+      <p class="meta">Episodes:</p>
+          <table class="detail">
+              <% series.episodes.each do |e| %>
+                  <%= fa = e.first_aired
+                      an = e.absolute_number
+                      "<tr>
+                        <td class='meta' width='100'>
+                            S#{"%02d" % e.season_num}E#{"%02d" % e.episode_num} #{' [' if an}#{an}#{']' if an}
+                        </td>
+                        <td class='meta' width='100'>" %>
+                    <% if fa %>
+                    <%= "#{"%02d" % fa.month}/#{"%02d" % fa.day}/#{fa.year}" %>
+                    <% end %>
+                    <%= "</td>
+                        <td class='meta'>#{e.name}</td>
+                    </tr>" %>
+              <% end %>
+          </table>
+    </article>
+<% else %>
+    <article><p>Show not found.</p></article>
+<% end %>
+

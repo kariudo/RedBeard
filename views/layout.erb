@@ -1,0 +1,27 @@
+<% @title ||= 'Not found' %>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <title><%= @title + ' | RedBeard&#0153;' %></title>
+  <link href="/foundation.min.css" rel="stylesheet">
+  <!--<link href="/reset.css" rel="stylesheet">-->
+  <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <hgroup>
+    <h1><a href="/">RedBeard&#0153;</a></h1>
+    <h2>"These are the shows we knows&hellip;"</h2>
+  </hgroup>
+</header>
+
+<div id="main">
+  <%= yield %>
+</div>
+
+<footer>
+  <p><small>RedBeard&#0153; is Copyright &copy; 2012 - Kariudo.com, all rights reserved.</small></p>
+</footer>
+</body>
+</html>

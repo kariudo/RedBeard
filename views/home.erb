@@ -1,0 +1,27 @@
+<section id="add">
+  <form action="/" method="post">
+    <textarea name="show" placeholder="Show name&hellip;"></textarea>
+    <input type="submit" value="Add Show!">
+  </form>
+</section>
+
+<% # Display all shows %>
+
+<% @shows.each do |show| %>
+    <%
+       tvdb = Tvdbr::Client.new('0BEE2B133E44344D')
+       series = tvdb.find_series_by_id(show.tvdb_id)
+    %>
+    <article style="background-image: url('<%= "/img/banner/#{show.tvdb_id}.jpg" %>');">
+      <div class="inner_article">
+          <p class="show_title">
+            <a href="/<%= show.id %>/detail"><%= truncate(show.title, 27) %></a>
+          </p>
+          <p class="links">
+            <a href="/<%= show.id %>/delete"><span class="entypo-trash"></a>
+          </p>
+            <p class="meta">Added: <%= show.added %> - Updated: <%= show.updated %></p>
+          </p>
+      </div>
+    </article>
+<% end %>
